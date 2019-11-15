@@ -20,10 +20,10 @@ public class Player1 extends Actor
     public void move()
     {
         if (Greenfoot.isKeyDown("w")) {
-            setLocation(getX(), getY() - 4);
+            setLocation(getX(), getY() - 3);
         }
         if (Greenfoot.isKeyDown("s")) {
-            setLocation(getX(), getY() + 4);
+            setLocation(getX(), getY() + 3);
         }
     }
 }

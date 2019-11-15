@@ -242,5 +242,7 @@ public class Pong extends World
         brick32.setLocation(444,606);
         brick32.setLocation(439,605);
         brick32.setLocation(437,604);
+        brick32.setLocation(449,608);
+        brick32.setLocation(444,606);
     }
 }

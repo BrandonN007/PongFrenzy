@@ -8,10 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Timer extends Actor
 {
-    /**
-     * Act - do whatever the Timer wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    protected int time = 120;
+    
     public void act() 
     {
         // Add your action code here.

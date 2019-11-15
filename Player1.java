@@ -14,6 +14,16 @@ public class Player1 extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        move();
     }    
+    
+    public void move()
+    {
+        if (Greenfoot.isKeyDown("w")) {
+            setLocation(getX(), getY() - 4);
+        }
+        if (Greenfoot.isKeyDown("s")) {
+            setLocation(getX(), getY() + 4);
+        }
+    }
 }

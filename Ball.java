@@ -20,9 +20,6 @@ public class Ball extends Actor
     public void move()
     {
         move(3);
-        if (isAtEdge()) {
-            turn(90);
-        }
     }
 
 
@@ -33,8 +30,7 @@ public class Ball extends Actor
     public void bounce()
     {
         Actor brick = getOneIntersectingObject(Brick.class);
-        Actor brick2 = getOneIntersectingObject(Brick2.class);
-        if (brick != null || brick2 != null) {
+        if (brick != null) {
             World world = getWorld();
             world.removeObject(brick);
             turn(Greenfoot.getRandomNumber(90));

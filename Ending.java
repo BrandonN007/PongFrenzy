@@ -16,6 +16,15 @@ public class Ending extends World
     public Ending()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 625, 1); 
+        super(852, 480, 1); 
+    }
+    
+    public void act()
+    {
+        World pong = new Pong();
+        if (Greenfoot.isKeyDown("space"));
+        {
+            Greenfoot.setWorld(new Pong());
+        }
     }
 }

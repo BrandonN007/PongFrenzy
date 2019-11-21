@@ -8,32 +8,26 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Ball extends Actor
 {
+    int BALL_SPEED = 3;
+    
     public void act()
     {
         move(3);
         bounce();
     }
 
-    /**
-     * 
-     */
     public void move()
     {
         move(3);
     }
-
-
-
-    /**
-     * 
-     */
+    
     public void bounce()
     {
         Actor brick = getOneIntersectingObject(Brick.class);
         if (brick != null) {
             World world = getWorld();
             world.removeObject(brick);
-            turn(Greenfoot.getRandomNumber(90));
+            turn(90);
         }
         Actor player1 = getOneIntersectingObject(Player1.class);
         if (player1 != null) {

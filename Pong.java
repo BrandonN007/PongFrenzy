@@ -8,15 +8,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Pong extends World
 {
-
+    private long lastFrameTimeMS;
+    private double timeStepDuration;
+    
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
     public Pong()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 625, 1); 
+        super(1000, 625, 1);
+        
         prepare();
     }
 
@@ -488,5 +491,16 @@ public class Pong extends World
         powerUp4.setLocation(513,187);
         powerUp31.setLocation(477,580);
         portal3.setLocation(512,584);
+    }
+
+    public void act()
+    {
+        timeStepDuration = (System.currentTimeMillis() - lastFrameTimeMS) / 1000.0;
+        lastFrameTimeMS = System.currentTimeMillis();
+    }
+    
+    public double getTimeStepDuration()
+    {
+        return timeStepDuration;
     }
 }

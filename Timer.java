@@ -12,6 +12,8 @@ public class Timer extends Actor
     
     public void act() 
     {
-        // Add your action code here.
+        Pong world = (Pong) getWorld();
+        time -= world.getTimeStepDuration();
+        setImage(new GreenfootImage("Time: " + (int) time, 20, Color.WHITE, new Color(0,0,0,0)));
     }    
 }

@@ -19,7 +19,7 @@ public class Pong extends World
     public Pong()
     {    
         super(1000, 625, 1);
-        
+        lastFrameTimeMS = System.currentTimeMillis();
         prepare();
     }
 

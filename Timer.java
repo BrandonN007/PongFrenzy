@@ -8,12 +8,38 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Timer extends Actor
 {
-    protected int time = 120;
+    protected double time = 120.0;
+    
+    public Timer()
+    {
+        time = 120.0;
+    }
     
     public void act() 
     {
         Pong world = (Pong) getWorld();
         time -= world.getTimeStepDuration();
-        setImage(new GreenfootImage("Time: " + (int) time, 20, Color.WHITE, new Color(0,0,0,0)));
+
+        
+        String timeStr = "0";
+        if (time >= 120.0)
+            timeStr += "2:";
+        else if (time >= 60.0)
+            timeStr += "1:";
+        else 
+            timeStr += "0:";
+        
+        int seconds = ((int)time) % 60;
+        
+        if (seconds < 10)
+        {
+            timeStr += "0" + seconds;
+        }
+        else
+        {
+            timeStr += "" + seconds;
+        }
+        
+        setImage(new GreenfootImage("Time: " + timeStr, 20, Color.WHITE, new Color(0,0,0,0)));
     }    
 }

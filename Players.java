@@ -12,8 +12,19 @@ public class Players extends Actor
      * Act - do whatever the Players wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act() 
+    public boolean isAtUpperEdge() 
     {
-        // Add your action code here.
-    }    
+        if(getY() <= 30)
+            return true;
+        else
+            return false;    
+    }   
+    
+    public boolean isAtLowerEdge()
+    {
+        if (getY() >= getWorld().getHeight()-30)
+           return true;
+           else
+           return false;
+    }
 }

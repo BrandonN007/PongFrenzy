@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Timer extends Actor
 {
-    protected double time = 120.0;
+    protected double time;
     
     public Timer()
     {
@@ -41,5 +41,6 @@ public class Timer extends Actor
         }
         
         setImage(new GreenfootImage("Time: " + timeStr, 20, Color.WHITE, new Color(0,0,0,0)));
+
     }    
 }

@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.*;
 /**
  * Write a description of class MyWorld here.
  * 
@@ -10,6 +10,8 @@ public class Pong extends World
 {
     private long lastFrameTimeMS;
     private double timeStepDuration;
+    protected int scoreplayer1 = 0;
+    protected int scoreplayer2 = 0;
     
     
     /**
@@ -157,10 +159,6 @@ public class Pong extends World
         addObject(ball,812,308);
         Ball ball2 = new Ball();
         addObject(ball2,140,306);
-        ScorePlayer1 scorePlayer1 = new ScorePlayer1();
-        addObject(scorePlayer1,194,32);
-        ScorePlayer1 scorePlayer12 = new ScorePlayer1();
-        addObject(scorePlayer12,829,29);
         brick213.setLocation(580,604);
         brick213.setLocation(591,595);
         brick.setLocation(450,32);
@@ -491,6 +489,10 @@ public class Pong extends World
         powerUp4.setLocation(513,187);
         powerUp31.setLocation(477,580);
         portal3.setLocation(512,584);
+        ScorePlayer1 sp1 = new ScorePlayer1();
+        addObject(sp1, 175, 33);
+        ScorePlayer2 sp2 = new ScorePlayer2();
+        addObject(sp2, 845, 33);
     }
 
     public void act()
@@ -503,4 +505,7 @@ public class Pong extends World
     {
         return timeStepDuration;
     }
+    
+
+    
 }

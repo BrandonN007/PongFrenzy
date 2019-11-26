@@ -18,6 +18,9 @@ public class Ball extends Actor
     {
         move(3);
         bounce();
+        isAtEdges();
+        isAtLeftEdge();
+        remove();
     }
 
     public void move()
@@ -29,14 +32,13 @@ public class Ball extends Actor
     {
         Actor brick = getOneIntersectingObject(Brick.class);
         Actor powerUp = getOneIntersectingObject(PowerUp.class);
+        World world = getWorld();
         if (brick != null) {
-            World world = getWorld();
             world.removeObject(brick);
             turn(90);
         }
         if (powerUp != null)
         {
-            World world = getWorld();
             world.removeObject(powerUp);
         }
         
@@ -49,21 +51,73 @@ public class Ball extends Actor
 
         }
         Actor player2 = getOneIntersectingObject(Player2.class);
-        if (player2 != null) {
-            turn(90);
+        if (player2 != null) 
+        {
+            int offset = getY() - player2.getY();
+            setRotation(offset);
         }
         
-        if (isAtEdge())
+        if (getX() == 0 || getX() == 1000)
         {
-            setRotation(360 - getRotation());
+            world.removeObject(this);
+        }
+        
+        if (getY() == 0)
+        {
+            if (getRotation() <= 90)
+            {
+                setRotation(180 + getRotation());
+            }
+            else
+            {
+                setRotation(180 - getRotation());
+            }  
+        }
+        
+        if (getY() == 625)
+        {
+            if (getRotation() <= 90)
+            {
+                setRotation(180 - getRotation());
+            }
+            else
+            {
+                setRotation(180 - getRotation());
+            }
         }
     }  
     
+    public void isAtEdges()
+    {
+        if (isAtEdge())
+        {
+            if (getRotation() <= 90)
+            {
+                setRotation(180 + getRotation());
+            }
+            if (getRotation() > 90)
+            {
+                setRotation(180 - getRotation());
+            }
+        }
+    }
+    
     public boolean isAtLeftEdge()
     {    
-        if (getX() < 0)
-            return true;
+        World world = getWorld();
+        if (getX() <= 0 || getX() >= 1000)
+        return true;
         else
-            return false;
+        return false;
     }
+    
+    public void remove()
+    {
+        World world = getWorld();
+        if (isAtLeftEdge() == true)
+        {
+            world.removeObject(this);
+        }
+    }
+
 }

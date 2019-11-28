@@ -12,9 +12,12 @@ public class Player1 extends Players
      * Act - do whatever the Player1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    private int speed;
+    private int size;
     public void act() 
     {
         move();
+        speed();
     }    
     
     public void move()
@@ -26,4 +29,18 @@ public class Player1 extends Players
             setLocation(getX(), getY() + 3);
         }
     }
+    
+    public void speed()
+    {
+        Actor powerUp = getOneIntersectingObject(PowerUp.class);
+        if(powerUp != null)
+        {
+            setLocation(getX() + 5, getY() + 5);
+            GreenfootImage image = getImage();
+            speed = Greenfoot.getRandomNumber(4)+1;
+            setImage(image);
+        }
+    }
+    
+    
 }

@@ -155,9 +155,9 @@ public class Pong extends World
         brick213.setLocation(588,604);
         Brick brick13 = new Brick();
         addObject(brick13,444,623);
-        Ball ball = new Ball();
+        Ball ball = new Ball(false);
         addObject(ball,812,308);
-        Ball ball2 = new Ball();
+        Ball ball2 = new Ball(true);
         addObject(ball2,140,306);
         brick213.setLocation(580,604);
         brick213.setLocation(591,595);

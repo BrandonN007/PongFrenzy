@@ -40,23 +40,24 @@ public class Ball extends Actor
             world.removeObject(brick);
             turn(90);
         }
-        if (powerUp != null)
+        if (isTouching(PowerUp.class))
         {
-            world.removeObject(powerUp);
+            world.addObject(new Size(), getX(), getY());
         }
         
         Actor player1 = getOneIntersectingObject(Player1.class);
         if (player1 != null)
         {
            int offset = getY() - player1.getY();
-         // turn(-90 - offset);
+           //turn(-90 - offset);
            setRotation(offset);
 
         }
         Actor player2 = getOneIntersectingObject(Player2.class);
         if (player2 != null) 
         {
-            int offset = getY() - player2.getY();
+            int offset = getY() + player2.getY();
+            //turn (90 + offset);
             setRotation(offset);
         }
         
@@ -69,23 +70,23 @@ public class Ball extends Actor
         {
             if (getRotation() <= 90)
             {
-                setRotation(180 + getRotation());
+                setRotation(360 + getRotation());
             }
             else
             {
-                setRotation(180 - getRotation());
+                setRotation(360 - getRotation());
             }  
         }
         
         if (getY() == 625)
         {
-            if (getRotation() <= 90)
+            if (getRotation() >= 90)
             {
-                setRotation(180 - getRotation());
+                setRotation(360 - getRotation());
             }
             else
             {
-                setRotation(180 - getRotation());
+                setRotation(180 + getRotation());
             }
         }
     }  

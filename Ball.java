@@ -126,6 +126,17 @@ public class Ball extends Actor
     
     public void hitPortal()
     {
+        Portal portal = (Portal)getOneIntersectingObject(Portal.class);
+        if (portal != null && portal.isPortalDisabled() == false) {
+            World world = getWorld();
+            world.addObject( new  Ball(), getX(), getY());
+            turn(Greenfoot.getRandomNumber(50) - 45);
+            portal.disable();
+        }
+        if (isAtEdge()) {
+            turn((95));
+        }
+        
         Actor portal2 = getOneIntersectingObject(Portal2.class);
         if (portal2 != null)
         {

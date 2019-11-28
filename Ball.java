@@ -8,21 +8,24 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Ball extends Actor
 {
-    int BALL_SPEED = 3;
+    int BALL_SPEED;
+    
     
     public Ball()
     {
-        //ball
+        
     }
     public void act()
     {
-        move(3);
+        move();
         bounce();
         isAtEdges();
         isAtLeftEdge();
-        remove();
+        remove(); 
+        hitPortal();
+       
     }
-
+    
     public void move()
     {
         move(3);
@@ -119,5 +122,28 @@ public class Ball extends Actor
             world.removeObject(this);
         }
     }
-
+    
+    public void hitPortal()
+    {
+        Actor portal2 = getOneIntersectingObject(Portal2.class);
+        if (portal2 != null)
+        {
+            setLocation(getX() + 5, getY() + 5);
+        }
+        
+        Actor portal3 = getOneIntersectingObject(Portal3.class);
+        if(portal3 != null)
+        {
+            GreenfootImage image = getImage();
+            image.scale(90,90);
+            setImage(image);
+        }
+    }
 }
+        
+            
+    
+    
+        
+        
+

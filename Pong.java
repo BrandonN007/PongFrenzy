@@ -247,10 +247,10 @@ public class Pong extends World
         brick32.setLocation(444,606);
         timer.setLocation(958,21);
         Portal portal = new Portal();
-        addObject(portal,512,30);
-        Portal portal2 = new Portal();
-        addObject(portal2,513,298);
-        Portal portal3 = new Portal();
+        addObject(portal,512,298);
+        Portal2 portal2 = new Portal2();
+        addObject(portal2,513,30);
+        Portal3 portal3 = new Portal3();
         addObject(portal3,516,588);
         Brick brick38 = new Brick();
         addObject(brick38,415,25);

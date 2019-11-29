@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Ball extends Actor
 {
-    int BALL_SPEED;
+    int speed = 3;
     boolean isLastTouchedByPlayer1;
     
     public Ball(boolean isLastTouchedByPlayer1)
@@ -19,7 +19,7 @@ public class Ball extends Actor
     public void act()
     {
         move();
-        size();
+        /*size();*/
         bounce();
         hitPortal();
 
@@ -28,7 +28,7 @@ public class Ball extends Actor
     
     public void move()
     {
-        move(3);
+        move(speed);
     }
     
     public void bounce()
@@ -109,7 +109,7 @@ public class Ball extends Actor
         Actor portal2 = getOneIntersectingObject(Portal2.class);
         if (portal2 != null)
         {
-            setLocation(getX() + 5, getY() + 5);
+            speed = speed + 1;
         }
         
         Actor portal3 = getOneIntersectingObject(Portal3.class);
@@ -121,14 +121,14 @@ public class Ball extends Actor
         }
     }
     
-    public void size()
+    /*public void size()
     {
         Actor powerUp = getOneIntersectingObject(PowerUp.class);        
         if(powerUp != null)
         {
             GreenfootImage ballImage = getImage();
             double scaleFactor = (1 + Greenfoot.getRandomNumber(5)) / 3.0;
-//             System.out.println(scaleFactor);
+   //             System.out.println(scaleFactor);
             ballImage.scale( (int)(ballImage.getWidth()*scaleFactor), (int)(ballImage.getHeight()*scaleFactor));
             setImage(ballImage);            
 
@@ -143,11 +143,11 @@ public class Ball extends Actor
                 p2.getImage().scale((int)(p2.getImage().getWidth()), (int)(p2.getImage().getHeight()*scaleFactor));
             }
         
-        }
+        }*/
         
         
-    }
 }
+
         
             
     

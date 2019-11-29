@@ -11,6 +11,4 @@ comment4.params=
 comment4.target=void\ bounce()
 comment5.params=
 comment5.target=void\ hitPortal()
-comment6.params=
-comment6.target=void\ size()
-numComments=7
+numComments=6

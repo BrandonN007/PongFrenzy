@@ -15,10 +15,14 @@ public class Size extends PowerUp
     public void act() 
     {
         move();
+        
     }    
     
     public void move()
     {
         move(2);
     }
+    
+   
 }
+

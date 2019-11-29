@@ -22,6 +22,7 @@ public class Ball extends Actor
         /*size();*/
         bounce();
         hitPortal();
+        eat();
 
        
     }
@@ -62,13 +63,14 @@ public class Ball extends Actor
             setRotation(offset);
             isLastTouchedByPlayer1 = false;
         }
-        
-        if (getX() == 1 || getX() == 999)
+        if (isAtEdge())
         {
-            world.removeObject(this);
+            speed = speed - speed - speed;
+          
         }
         
-        if (getY() == 1)
+        
+        /*if (getY() == 1)
         {
             if (getRotation() >= 270)
             {
@@ -90,9 +92,16 @@ public class Ball extends Actor
             {
                 setRotation(90 - (getRotation() + 90));
             }
-        }
+        }*/
     }  
-    
+    public void eat()
+    {
+      World world = getWorld();  
+      if (getX() == 0 || getX() == 999)
+         {
+            world.removeObject(this);
+         }
+    }
     public void hitPortal()
     {
         Portal portal = (Portal)getOneIntersectingObject(Portal.class);

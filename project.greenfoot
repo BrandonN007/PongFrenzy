@@ -31,38 +31,26 @@ dependency13.from=Pong
 dependency13.to=ScorePlayer2
 dependency13.type=UsesDependency
 dependency14.from=Ball
-<<<<<<< HEAD
 dependency14.to=Size
 dependency14.type=UsesDependency
 dependency15.from=Ball
 dependency15.to=Portal
-=======
-dependency14.to=Player1
-dependency14.type=UsesDependency
-dependency15.from=Ball
-dependency15.to=Player2
->>>>>>> Player size affected by powerups
 dependency15.type=UsesDependency
 dependency16.from=Ball
-dependency16.to=Brick
+dependency16.to=Player1
 dependency16.type=UsesDependency
 dependency17.from=Ball
-dependency17.to=PowerUp
+dependency17.to=Player2
 dependency17.type=UsesDependency
 dependency18.from=Ball
-dependency18.to=Player1
+dependency18.to=Brick
 dependency18.type=UsesDependency
 dependency19.from=Ball
-<<<<<<< HEAD
-dependency19.to=Player2
-=======
-dependency19.to=Portal3
->>>>>>> Player size affected by powerups
+dependency19.to=PowerUp
 dependency19.type=UsesDependency
 dependency2.from=Ending
 dependency2.to=Pong
 dependency2.type=UsesDependency
-<<<<<<< HEAD
 dependency20.from=Ball
 dependency20.to=Portal2
 dependency20.type=UsesDependency
@@ -72,14 +60,9 @@ dependency21.type=UsesDependency
 dependency22.from=Timer
 dependency22.to=Pong
 dependency22.type=UsesDependency
-=======
-dependency20.from=Timer
-dependency20.to=Pong
-dependency20.type=UsesDependency
-dependency21.from=Player1
-dependency21.to=PowerUp
-dependency21.type=UsesDependency
->>>>>>> Player size affected by powerups
+dependency23.from=Player1
+dependency23.to=PowerUp
+dependency23.type=UsesDependency
 dependency3.from=Pong
 dependency3.to=PowerUp
 dependency3.type=UsesDependency
@@ -101,23 +84,13 @@ dependency8.type=UsesDependency
 dependency9.from=Pong
 dependency9.to=Portal
 dependency9.type=UsesDependency
-<<<<<<< HEAD
-editor.fx.0.height=686
-editor.fx.0.width=809
-editor.fx.0.x=909
-editor.fx.0.y=144
+editor.fx.0.height=739
+editor.fx.0.width=816
+editor.fx.0.x=621
+editor.fx.0.y=22
 height=1056
-package.numDependencies=22
+package.numDependencies=23
 package.numTargets=18
-=======
-editor.fx.0.height=1056
-editor.fx.0.width=1936
-editor.fx.0.x=-8
-editor.fx.0.y=-8
-height=810
-package.numDependencies=21
-package.numTargets=16
->>>>>>> Player size affected by powerups
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -261,10 +234,5 @@ target9.y=0
 version=3.0.0
 width=1936
 world.lastInstantiated=Pong
-<<<<<<< HEAD
 xPosition=0
 yPosition=0
-=======
-xPosition=556
-yPosition=151
->>>>>>> Player size affected by powerups

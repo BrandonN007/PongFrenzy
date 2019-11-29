@@ -21,9 +21,6 @@ public class Ball extends Actor
         move();
         size();
         bounce();
-        isAtEdges();
-        isAtLeftEdge();
-        remove(); 
         hitPortal();
 
        
@@ -43,9 +40,10 @@ public class Ball extends Actor
             world.removeObject(brick);
             turn(90);
         }
-        if (isTouching(PowerUp.class))
+        if (powerUp != null)
         {
             world.addObject(new Size(), getX(), getY());
+            world.removeObject(powerUp);
         }
         
         Actor player1 = getOneIntersectingObject(Player1.class);
@@ -65,75 +63,42 @@ public class Ball extends Actor
             isLastTouchedByPlayer1 = false;
         }
         
-        if (getX() == 0 || getX() == 1000)
+        if (getX() == 1 || getX() == 999)
         {
             world.removeObject(this);
         }
         
-        if (getY() == 0)
+        if (getY() == 1)
         {
-            if (getRotation() <= 90)
+            if (getRotation() >= 270)
             {
-                setRotation(360 + getRotation());
+                setRotation(180 + (getRotation() - 270));
             }
             else
             {
-                setRotation(360 - getRotation());
+                setRotation(90 + (270 - getRotation()));
             }  
         }
         
-        if (getY() == 625)
+        if (getY() == 624)
         {
             if (getRotation() >= 90)
             {
-                setRotation(360 - getRotation());
+                setRotation(90 + (getRotation() - 90));
             }
             else
             {
-                setRotation(180 + getRotation());
+                setRotation(90 - (getRotation() + 90));
             }
         }
     }  
-    
-    public void isAtEdges()
-    {
-        if (isAtEdge())
-        {
-            if (getRotation() <= 90)
-            {
-                setRotation(180 + getRotation());
-            }
-            if (getRotation() > 90)
-            {
-                setRotation(180 - getRotation());
-            }
-        }
-    }
-    
-    public boolean isAtLeftEdge()
-    {    
-        World world = getWorld();
-        if (getX() <= 0 || getX() >= 1000)
-        return true;
-        else
-        return false;
-    }
-    
-    public void remove()
-    {
-        World world = getWorld();
-        if (isAtLeftEdge() == true)
-        {
-            world.removeObject(this);
-        }
-    }
     
     public void hitPortal()
     {
         Portal portal = (Portal)getOneIntersectingObject(Portal.class);
         if (portal != null && portal.isPortalDisabled() == false) {
             World world = getWorld();
-            world.addObject( new  Ball(), getX(), getY());
+            world.addObject(new Ball(true), getX(), getY());
             turn(Greenfoot.getRandomNumber(50) - 45);
             portal.disable();
         }
@@ -151,7 +116,7 @@ public class Ball extends Actor
         if(portal3 != null)
         {
             GreenfootImage image = getImage();
-            image.scale(90,90);
+            image.scale(60,60);
             setImage(image);
         }
     }
@@ -163,7 +128,7 @@ public class Ball extends Actor
         {
             GreenfootImage ballImage = getImage();
             double scaleFactor = (1 + Greenfoot.getRandomNumber(5)) / 3.0;
-//            System.out.println(scaleFactor);
+//             System.out.println(scaleFactor);
             ballImage.scale( (int)(ballImage.getWidth()*scaleFactor), (int)(ballImage.getHeight()*scaleFactor));
             setImage(ballImage);            
 

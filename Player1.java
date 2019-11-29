@@ -23,10 +23,10 @@ public class Player1 extends Players
     public void move()
     {
         if (Greenfoot.isKeyDown("w")) {
-            setLocation(getX(), getY() - 3);
+            setLocation(getX(), getY() - 4);
         }
         if (Greenfoot.isKeyDown("s")) {
-            setLocation(getX(), getY() + 3);
+            setLocation(getX(), getY() + 4);
         }
     }
     

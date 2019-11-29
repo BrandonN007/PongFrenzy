@@ -12,7 +12,7 @@ public class Timer extends Actor
     
     public Timer()
     {
-        time = 120.0;
+        time = 300.0;
     }
     
     public void act() 
@@ -22,7 +22,13 @@ public class Timer extends Actor
 
         
         String timeStr = "0";
-        if (time >= 120.0)
+        if (time >= 300.0)
+            timeStr += "5:";
+        else if (time >= 240.0)
+            timeStr += "4:";
+        else if (time >= 180.0)
+            timeStr += "3:";
+        else if (time >= 120.0)
             timeStr += "2:";
         else if (time >= 60.0)
             timeStr += "1:";

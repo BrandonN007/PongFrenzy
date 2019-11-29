@@ -18,12 +18,21 @@ public class Ball extends Actor
     
     public void act()
     {
-        move();
-        /*size();*/
-        bounce();
-        hitPortal();
-        eat();
+        try
+        {
+        
+            move();
+            /*size();*/
+            bounce();
+            hitPortal();
+            scorePlayer1();
+            scorePlayer2();
+            bounceBrickPowerUp();
 
+        }
+        catch(Exception e)
+        {
+        }
        
     }
     
@@ -31,18 +40,12 @@ public class Ball extends Actor
     {
         move(speed);
     }
-    
-    public void bounce()
+    public void bounceBrickPowerUp()
     {
-        Actor brick = getOneIntersectingObject(Brick.class);
         Actor brickPowerUp = getOneIntersectingObject(BrickPowerUp.class);
-        World world = getWorld();
-        if (brick != null) {
-            world.removeObject(brick);
-            turn(120 + Greenfoot.getRandomNumber(120));
-        }
-        if (brickPowerUp != null)
+       if (brickPowerUp != null)
         {
+            World world = getWorld();
             world.removeObject(brickPowerUp);
             
             // Drop size 1/4 of the time
@@ -68,6 +71,20 @@ public class Ball extends Actor
             }
         
         }
+      }
+    }
+    
+    
+    public void bounce()
+    {
+        Actor brick = getOneIntersectingObject(Brick.class);
+        Actor brickPowerUp = getOneIntersectingObject(BrickPowerUp.class);
+        World world = getWorld();
+        if (brick != null) {
+            world.removeObject(brick);
+            turn(120 + Greenfoot.getRandomNumber(120));
+        }
+       
         
         Actor player1 = getOneIntersectingObject(Player1.class);
         if (player1 != null)
@@ -123,14 +140,25 @@ public class Ball extends Actor
                 setRotation(90 - (getRotation() + 90));
             }
         }*/
-     } 
-    }
-    public void eat()
+      } 
+    
+    public void scorePlayer1()
      {
-      World world = getWorld();  
-      if (getX() == 0 || getX() == 999)
+      Pong world = (Pong) getWorld();  
+      if (getX() == 999)
          {
             world.removeObject(this);
+            world.increaseScorePlayer1();
+         }
+    }
+    
+    public void scorePlayer2()
+     {
+      Pong world = (Pong) getWorld();  
+      if (getX() == 0)
+         {
+            world.removeObject(this);
+            world.increaseScorePlayer2();
          }
     }
     
@@ -159,6 +187,7 @@ public class Ball extends Actor
         if (portal2 != null)
         {
             speed = speed + 1;
+            move(speed);
         }
         
         Actor portal3 = getOneIntersectingObject(Portal3.class);

@@ -10,8 +10,8 @@ public class Pong extends World
 {
     private long lastFrameTimeMS;
     private double timeStepDuration;
-    protected int scoreplayer1 = 0;
-    protected int scoreplayer2 = 0;
+    protected int scorePlayer1 = 0;
+    protected int scorePlayer2 = 0;
     
     
     /**
@@ -489,16 +489,54 @@ public class Pong extends World
         powerUp4.setLocation(513,187);
         powerUp31.setLocation(477,580);
         portal3.setLocation(512,584);
-        ScorePlayer1 sp1 = new ScorePlayer1();
-        addObject(sp1, 175, 33);
-        ScorePlayer2 sp2 = new ScorePlayer2();
-        addObject(sp2, 845, 33);
+        brick57.setLocation(255,225);
+        brick64.setLocation(305,476);
+        portal.setLocation(509,301);
+        removeObject(brick57);
+        removeObject(brick64);
+        removeObject(brick108);
+        removeObject(brick86);
+        Portal portal4 = new Portal();
+        addObject(portal4,645,134);
+        Portal portal5 = new Portal();
+        addObject(portal5,649,501);
+        Portal portal6 = new Portal();
+        addObject(portal6,384,135);
+        Portal portal7 = new Portal();
+        addObject(portal7,384,504);
+        portal3.setLocation(792,434);
+        Portal2 portal22 = new Portal2();
+        addObject(portal22,513,579);
+        portal3.setLocation(514,411);
+        Portal3 portal32 = new Portal3();
+        addObject(portal32,509,190);
+        portal3.setLocation(517,412);
+        portal32.setLocation(519,192);
+        portal.setLocation(518,297);
+        portal5.setLocation(650,511);
+        portal32.setLocation(510,198);
+        portal.setLocation(511,300);
+        portal3.setLocation(509,405);
+        brick51.setLocation(283,220);
+        brick100.setLocation(767,379);
+        removeObject(brick51);
+        removeObject(brick100);
+
+        removeObject(portal32);
+        removeObject(portal3);
+        Portal3 portal33 = new Portal3();
+        addObject(portal33,616,397);
+        Portal3 portal34 = new Portal3();
+        addObject(portal34,414,241);
     }
 
     public void act()
     {
         timeStepDuration = (System.currentTimeMillis() - lastFrameTimeMS) / 1000.0;
         lastFrameTimeMS = System.currentTimeMillis();
+        
+        showText("" + scorePlayer1, 175, 33);
+        showText("" + scorePlayer2, 845, 33);
     }
     
     public double getTimeStepDuration()
@@ -506,6 +544,14 @@ public class Pong extends World
         return timeStepDuration;
     }
     
-
+    public void increaseScorePlayer1()
+    {
+        scorePlayer1 += 1;
+    }
+    
+    public void increaseScorePlayer2()
+    {
+        scorePlayer2 += 1;
+    }
     
 }

@@ -35,16 +35,38 @@ public class Ball extends Actor
     public void bounce()
     {
         Actor brick = getOneIntersectingObject(Brick.class);
-        Actor powerUp = getOneIntersectingObject(PowerUp.class);
+        Actor brickPowerUp = getOneIntersectingObject(BrickPowerUp.class);
         World world = getWorld();
         if (brick != null) {
             world.removeObject(brick);
-            turn(90);
+            turn(120 + Greenfoot.getRandomNumber(120));
         }
-        if (powerUp != null)
+        if (brickPowerUp != null)
         {
-            world.addObject(new Size(), getX(), getY());
-            world.removeObject(powerUp);
+            world.removeObject(brickPowerUp);
+            
+            // Drop size 1/4 of the time
+            if (Greenfoot.getRandomNumber(4) == 0)
+            {
+            {
+                Size newSize = new Size();
+                world.addObject(newSize, getX(), getY());
+                if (isLastTouchedByPlayer1)
+                {
+                    newSize.setRotation(180 - newSize.getRotation());
+                }
+            
+            }
+            if (Greenfoot.getRandomNumber(4) == 0)
+            {
+                Speed newSpeed = new Speed();
+                world.addObject(newSpeed, getX(), getY());
+                if (isLastTouchedByPlayer1)
+                {
+                    newSpeed.setRotation(180 - newSpeed.getRotation());
+                }
+            }
+        
         }
         
         Actor player1 = getOneIntersectingObject(Player1.class);
@@ -65,8 +87,16 @@ public class Ball extends Actor
         }
         if (isAtEdge())
         {
-            speed = speed - speed - speed;
-          
+            if (Math.abs(getRotation() - 90) < 15)
+            {
+                setRotation(getRotation() + 45);
+            }
+            if (Math.abs(getRotation() - 270) < 15)
+            {
+                setRotation(getRotation() + 45);
+            }
+            
+            setRotation(270 - getRotation());
         }
         
         
@@ -93,21 +123,31 @@ public class Ball extends Actor
                 setRotation(90 - (getRotation() + 90));
             }
         }*/
-    }  
+     } 
+    }
     public void eat()
-    {
+     {
       World world = getWorld();  
       if (getX() == 0 || getX() == 999)
          {
             world.removeObject(this);
          }
     }
+    
+    public void setSpeed(int speed)
+    {
+        this.speed = speed;
+    }
+    
     public void hitPortal()
     {
         Portal portal = (Portal)getOneIntersectingObject(Portal.class);
         if (portal != null && portal.isPortalDisabled() == false) {
             World world = getWorld();
-            world.addObject(new Ball(true), getX(), getY());
+            Ball newBall = new Ball(isLastTouchedByPlayer1);
+            newBall.setImage(getImage());
+            newBall.setSpeed(speed);
+            world.addObject(newBall, getX(), getY());
             turn(Greenfoot.getRandomNumber(50) - 45);
             portal.disable();
         }

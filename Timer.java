@@ -48,5 +48,9 @@ public class Timer extends Actor
         
         setImage(new GreenfootImage("Time: " + timeStr, 20, Color.WHITE, new Color(0,0,0,0)));
 
+        if (time < 0)
+        {
+            Greenfoot.setWorld(new Ending());
+        }
     }    
 }

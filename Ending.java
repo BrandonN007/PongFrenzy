@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Ending extends World
+public class Ending extends SimulationWorld
 {
 
     /**
@@ -16,7 +16,7 @@ public class Ending extends World
     public Ending()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(852, 480, 1); 
+        super("", 852, 480, 1); 
     }
     
     public void act()

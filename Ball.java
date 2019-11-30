@@ -49,7 +49,7 @@ public class Ball extends Actor
             world.removeObject(brickPowerUp);
             
             // Drop size 1/4 of the time
-            if (Greenfoot.getRandomNumber(4) == 0)
+            if (Greenfoot.getRandomNumber(5) == 0)
             {
             {
                 Size newSize = new Size();
@@ -60,7 +60,7 @@ public class Ball extends Actor
                 }
             
             }
-            if (Greenfoot.getRandomNumber(4) == 0)
+            if (Greenfoot.getRandomNumber(5) == 1)
             {
                 Speed newSpeed = new Speed();
                 world.addObject(newSpeed, getX(), getY());
@@ -69,7 +69,26 @@ public class Ball extends Actor
                     newSpeed.setRotation(180 - newSpeed.getRotation());
                 }
             }
+            
+            if (Greenfoot.getRandomNumber(5) == 2)
+            {
+                PlayerSizeDown sizeDown = new PlayerSizeDown();
+                world.addObject(sizeDown, getX(), getY());
+                if (isLastTouchedByPlayer1)
+                {
+                    sizeDown.setRotation(180 - sizeDown.getRotation());
+                }
+            }
         
+            if (Greenfoot.getRandomNumber(5) == 3)
+            {
+                PlayerSpeedDown speedDown = new PlayerSpeedDown();
+                world.addObject(speedDown, getX(), getY());
+                if (isLastTouchedByPlayer1)
+                {
+                    speedDown.setRotation(180 - speedDown.getRotation());
+                }
+            }
         }
       }
     }

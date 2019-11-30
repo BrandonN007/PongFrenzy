@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Menu extends World
+public class Menu extends SimulationWorld
 {
 
     /**
@@ -15,7 +15,7 @@ public class Menu extends World
      */
     public Menu()
     {    
-        super(1000, 625, 1); 
+        super("", 1000, 625, 1); 
     }
     
     public void act()

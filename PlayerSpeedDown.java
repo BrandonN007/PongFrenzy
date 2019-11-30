@@ -1,19 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Speed here.
+ * Write a description of class PlayerSpeedDown here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Speed extends PowerUp
+public class PlayerSpeedDown extends PowerUp
 {
     /**
-     * Act - do whatever the Speed wants to do. This method is called whenever
+     * Act - do whatever the PlayerSpeedDown wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        move(3);
+        // Add your action code here.
     }    
 }

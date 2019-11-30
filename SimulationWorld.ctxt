@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=SimulationWorld
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ SimulationWorld\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=musicFile\ windowWidth\ windowHeight\ pixels
+comment1.target=SimulationWorld(java.lang.String,\ int,\ int,\ int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ SimulationWorld.\r\n\ \r\n
+comment2.params=newWorld
+comment2.target=void\ transitionToWorld(SimulationWorld)
+comment2.text=public\ void\ setMusic(GreenfootSound\ newMusic)\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ if\ (music\ \!\=\ null\ &&\ music.isPlaying()\ \=\=\ true)\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ music.stop();\r\n\ \ \ \ \ \ \ \ \ \ \ \ newMusic.playLoop();\r\n\ \ \ \ \ \ \ \ }\r\n}
+numComments=3

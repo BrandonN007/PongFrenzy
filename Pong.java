@@ -6,7 +6,7 @@ import java.util.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Pong extends World
+public class Pong extends SimulationWorld
 {
     private long lastFrameTimeMS;
     private double timeStepDuration;
@@ -20,7 +20,7 @@ public class Pong extends World
      */
     public Pong()
     {    
-        super(1000, 625, 1);
+        super("", 1000, 625, 1);
         lastFrameTimeMS = System.currentTimeMillis();
         prepare();
     }
@@ -552,6 +552,15 @@ public class Pong extends World
     public void increaseScorePlayer2()
     {
         scorePlayer2 += 1;
+    }
+    
+    public void transitionToWorld()
+    {
+        List<Ball> ballList = getObjects(Ball.class);
+        if (ballList.size() <= 0)
+        {
+            transitionToWorld(new Ending());
+        }
     }
     
 }

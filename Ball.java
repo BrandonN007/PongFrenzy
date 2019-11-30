@@ -59,7 +59,8 @@ public class Ball extends Actor
                 }
             
             }
-            else if (Greenfoot.getRandomNumber(4) == 1)
+            else
+             if (Greenfoot.getRandomNumber(4) == 1)
             {
                 Speed speedUp = new Speed();
                 world.addObject(speedUp, getX(), getY());

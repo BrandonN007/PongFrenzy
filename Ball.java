@@ -43,34 +43,33 @@ public class Ball extends Actor
     public void bounceBrickPowerUp()
     {
         Actor brickPowerUp = getOneIntersectingObject(BrickPowerUp.class);
-       if (brickPowerUp != null)
+        if (brickPowerUp != null)
         {
             World world = getWorld();
             world.removeObject(brickPowerUp);
             
-            // Drop size 1/4 of the time
-            if (Greenfoot.getRandomNumber(5) == 0)
+            // Drop power up 1/4 of the time
+            if (Greenfoot.getRandomNumber(4) == 0)
             {
-            {
-                Size newSize = new Size();
-                world.addObject(newSize, getX(), getY());
+                Size sizeUp = new Size();
+                world.addObject(sizeUp, getX(), getY());
                 if (isLastTouchedByPlayer1)
                 {
-                    newSize.setRotation(180 - newSize.getRotation());
+                    sizeUp.setRotation(180 - sizeUp.getRotation());
                 }
             
             }
-            if (Greenfoot.getRandomNumber(5) == 1)
+            else if (Greenfoot.getRandomNumber(4) == 1)
             {
-                Speed newSpeed = new Speed();
-                world.addObject(newSpeed, getX(), getY());
+                Speed speedUp = new Speed();
+                world.addObject(speedUp, getX(), getY());
                 if (isLastTouchedByPlayer1)
                 {
-                    newSpeed.setRotation(180 - newSpeed.getRotation());
+                    speedUp.setRotation(180 - speedUp.getRotation());
                 }
             }
-            
-            if (Greenfoot.getRandomNumber(5) == 2)
+            else
+            if (Greenfoot.getRandomNumber(4) == 2)
             {
                 PlayerSizeDown sizeDown = new PlayerSizeDown();
                 world.addObject(sizeDown, getX(), getY());
@@ -79,8 +78,8 @@ public class Ball extends Actor
                     sizeDown.setRotation(180 - sizeDown.getRotation());
                 }
             }
-        
-            if (Greenfoot.getRandomNumber(5) == 3)
+            else
+            if (Greenfoot.getRandomNumber(4) == 3)
             {
                 PlayerSpeedDown speedDown = new PlayerSpeedDown();
                 world.addObject(speedDown, getX(), getY());
@@ -90,7 +89,7 @@ public class Ball extends Actor
                 }
             }
         }
-      }
+      
     }
     
     
@@ -134,6 +133,7 @@ public class Ball extends Actor
             
             setRotation(270 - getRotation());
         }
+    
         
         
         /*if (getY() == 1)
@@ -160,6 +160,7 @@ public class Ball extends Actor
             }
         }*/
       } 
+    
     
     public void scorePlayer1()
      {

@@ -14,6 +14,16 @@ public class PlayerSizeDown extends PowerUp
      */
     public void act() 
     {
-        // Add your action code here.
+        move(2);
+        remove();
     }    
+    
+    public void remove()
+    {
+        World world = getWorld();
+        if (getX() == 0 || getX() == 999)
+        {
+            world.removeObject(this);
+        }
+    }
 }

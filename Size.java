@@ -15,13 +15,17 @@ public class Size extends PowerUp
     public void act() 
     {
         move(2);
-        
+        remove();
     }    
-    /*
-    public void move()
+    
+    public void remove()
     {
-        move(2);
-    }*/
+        World world = getWorld();
+        if (getX() == 0 || getX() == 999)
+        {
+            world.removeObject(this);
+        }
+    }
     
    
 }

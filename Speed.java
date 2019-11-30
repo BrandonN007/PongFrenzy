@@ -14,6 +14,16 @@ public class Speed extends PowerUp
      */
     public void act() 
     {
-        move(3);
+        move(2);
+        remove();
     }    
+    
+    public void remove()
+    {
+        World world = getWorld();
+        if (getX() == 0 || getX() == 999)
+        {
+            world.removeObject(this);
+        }
+    }
 }

@@ -51,7 +51,7 @@ public class Ball extends Actor
             // Drop power up 1/4 of the time
             if (Greenfoot.getRandomNumber(4) == 0)
             {
-                Size sizeUp = new Size();
+                PlayerSizeUp sizeUp = new PlayerSizeUp();
                 world.addObject(sizeUp, getX(), getY());
                 if (isLastTouchedByPlayer1)
                 {
@@ -62,7 +62,7 @@ public class Ball extends Actor
             else
              if (Greenfoot.getRandomNumber(4) == 1)
             {
-                Speed speedUp = new Speed();
+                PlayerSpeedUp speedUp = new PlayerSpeedUp();
                 world.addObject(speedUp, getX(), getY());
                 if (isLastTouchedByPlayer1)
                 {

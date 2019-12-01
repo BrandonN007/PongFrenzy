@@ -18,6 +18,10 @@ public class Player1 extends Players
     {
         move();
         speed();
+        hitspeedUp();
+        hitspeedDown();
+        hitsizeUp();
+        hitsizeDown();
     }    
     
     public void move()
@@ -42,5 +46,37 @@ public class Player1 extends Players
         }
     }
     
+    public void hitspeedUp()
+    {
+        Actor playerspeedUp = getOneIntersectingObject(PlayerSpeedUp.class);
+        if(playerspeedUp != null)
+        {
+            setLocation(getX() + 5, getY() + 5);
+            GreenfootImage image = getImage();
+            setImage(image);
+            speed = speed + 1;
+            move(speed);
+        }        
+    }
     
+    public void hitspeedDown()
+    {
+        setLocation(getX() + 5, getY() + 5);
+        GreenfootImage image = getImage();
+        setImage(image);
+        speed = speed - 1;
+        move(speed);
+    }
+   
+    public void hitsizeUp()
+    {
+        GreenfootImage image = getImage();
+        setImage(image);
+    }
+    
+    public void hitsizeDown()
+    {
+        GreenfootImage image = getImage();
+        setImage(image);
+    }
 }

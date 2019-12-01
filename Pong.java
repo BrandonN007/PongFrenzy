@@ -537,6 +537,7 @@ public class Pong extends SimulationWorld
         
         showText("" + scorePlayer1, 175, 33);
         showText("" + scorePlayer2, 845, 33);
+        transitionToGameOver();
     }
     
     public double getTimeStepDuration()
@@ -555,13 +556,12 @@ public class Pong extends SimulationWorld
     }
     
 
-    public void transitionToEnding()
+    public void transitionToGameOver()
     {
         List<Ball> ballList = getObjects(Ball.class);
         if (ballList.size() == 0 )
         {
-            Greenfoot.setWorld(new Ending(scorePlayer1, scorePlayer2));
-        }
-        
+           transitionToWorld(new Ending(scorePlayer1, scorePlayer2));
+        } 
     }
 }

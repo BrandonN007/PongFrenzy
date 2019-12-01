@@ -29,8 +29,5 @@ public class Menu extends SimulationWorld
     {
         super.act();
         isKeyDown();
-    }
-   
-        
-        
+    }    
 }

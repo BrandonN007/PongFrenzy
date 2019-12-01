@@ -16,5 +16,5 @@ comment5.target=void\ increaseScorePlayer1()
 comment6.params=
 comment6.target=void\ increaseScorePlayer2()
 comment7.params=
-comment7.target=void\ transitionToEnding()
+comment7.target=void\ transitionToGameOver()
 numComments=8

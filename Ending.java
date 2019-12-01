@@ -16,7 +16,7 @@ public class Ending extends SimulationWorld
     public Ending()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super("", 852, 480, 1); 
+        super("endMenu.wav", 852, 480, 1); 
     }
     
     public void act()

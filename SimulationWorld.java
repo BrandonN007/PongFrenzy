@@ -18,35 +18,16 @@ public class SimulationWorld extends World
     public SimulationWorld(String musicFile, int windowWidth, int windowHeight, int pixels)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 625, 1); 
-        
+        super(1000, 625, 1);
+       
         /*if (musicFile != null && musicFile.isEmpty() == false)
         {
             music = new GreenfootSound(musicFile);
         }*/
     }
     
-    /*public void started()
-    {
-        if (music != null)
-        {
-            music.playLoop();
-        }
-    }*/
-    
-    /*public void stopped()
-    {
-        if (music != null)
-        {
-            music.pause();
-        }
-    }*/
-    
-    /*public GreenfootSound getMusic()
-    {
-        return music;
-    }*/
-    
+ 
+   
     /*public void setMusic(GreenfootSound newMusic)
     {
         if (music != null && music.isPlaying() == true)

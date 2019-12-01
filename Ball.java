@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.*;
 /**
  * Write a description of class Ball here.
  * 
@@ -112,6 +112,8 @@ public class Ball extends Actor
            //turn(-90 - offset);
            setRotation(offset);
            isLastTouchedByPlayer1 = true;
+           GreenfootSound sound = new GreenfootSound("bounce.mp3");
+           sound.play();
         }
         Actor player2 = getOneIntersectingObject(Player2.class);
         if (player2 != null) 

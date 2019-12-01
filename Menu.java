@@ -15,15 +15,33 @@ public class Menu extends SimulationWorld
      */
     public Menu()
     {    
-        super("", 1000, 625, 1); 
+        super("", 1000, 625, 1);    
+        GreenfootSound music = new GreenfootSound("startMenu.wav");
+        music.play();
+    }
+    
+    public void playLoop()
+    {
+        
     }
     
     public void act()
     {
-        World pong = new Pong();
-        if (Greenfoot.isKeyDown("space"));
+        
+        if (Greenfoot.isKeyDown("space"))
         {
-            Greenfoot.setWorld(new Pong());
+            transitionToWorld(new Pong());
+            
         }
     }
+    
+    public void transitionToWorld(SimulationWorld newWorld)
+    {
+        
+        Greenfoot.setWorld(newWorld);
+        newWorld.started();
+    }
+        
+        
+        
 }

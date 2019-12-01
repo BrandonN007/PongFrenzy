@@ -47,11 +47,12 @@ public class Ball extends Actor
         {
             World world = getWorld();
             world.removeObject(brickPowerUp);
+            Greenfoot.playSound("bump.wav");
             
             // Drop power up 1/4 of the time
             if (Greenfoot.getRandomNumber(4) == 0)
             {
-                PlayerSizeUp sizeUp = new PlayerSizeUp();
+                PlayerSizeUpEffect sizeUp = new PlayerSizeUpEffect();
                 world.addObject(sizeUp, getX(), getY());
                 if (isLastTouchedByPlayer1)
                 {
@@ -62,7 +63,7 @@ public class Ball extends Actor
             else
              if (Greenfoot.getRandomNumber(4) == 1)
             {
-                PlayerSpeedUp speedUp = new PlayerSpeedUp();
+                PlayerSpeedUpEffect speedUp = new PlayerSpeedUpEffect();
                 world.addObject(speedUp, getX(), getY());
                 if (isLastTouchedByPlayer1)
                 {
@@ -72,7 +73,7 @@ public class Ball extends Actor
             else
             if (Greenfoot.getRandomNumber(4) == 2)
             {
-                PlayerSizeDown sizeDown = new PlayerSizeDown();
+                PlayerSizeDownEffect sizeDown = new PlayerSizeDownEffect();
                 world.addObject(sizeDown, getX(), getY());
                 if (isLastTouchedByPlayer1)
                 {
@@ -82,7 +83,7 @@ public class Ball extends Actor
             else
             if (Greenfoot.getRandomNumber(4) == 3)
             {
-                PlayerSpeedDown speedDown = new PlayerSpeedDown();
+                PlayerSpeedDownEffect speedDown = new PlayerSpeedDownEffect();
                 world.addObject(speedDown, getX(), getY());
                 if (isLastTouchedByPlayer1)
                 {
@@ -101,6 +102,7 @@ public class Ball extends Actor
         World world = getWorld();
         if (brick != null) {
             world.removeObject(brick);
+            Greenfoot.playSound("bump.wav");
             turn(120 + Greenfoot.getRandomNumber(120));
         }
        
@@ -115,6 +117,28 @@ public class Ball extends Actor
            GreenfootSound sound = new GreenfootSound("bounce.mp3");
            sound.play();
         }
+        Actor player1sizeUp = getOneIntersectingObject(Player1SizeUp.class);
+        if (player1sizeUp != null)
+        {
+           int offset = getY() - player1.getY();
+           //turn(-90 - offset);
+           setRotation(offset);
+           isLastTouchedByPlayer1 = true;
+           GreenfootSound sound = new GreenfootSound("bounce.mp3");
+           sound.play();
+        }
+        Actor player1sizeDown = getOneIntersectingObject(Player1SizeDown.class);
+        if (player1sizeDown != null)
+        {
+           int offset = getY() - player1.getY();
+           //turn(-90 - offset);
+           setRotation(offset);
+           isLastTouchedByPlayer1 = true;
+           GreenfootSound sound = new GreenfootSound("bounce.mp3");
+           sound.play();
+        }
+        
+        
         Actor player2 = getOneIntersectingObject(Player2.class);
         if (player2 != null) 
         {
@@ -123,6 +147,23 @@ public class Ball extends Actor
             setRotation(offset);
             isLastTouchedByPlayer1 = false;
         }
+        Actor player2SizeUp = getOneIntersectingObject(Player2SizeUp.class);
+        if (player2SizeUp != null) 
+        {
+            int offset = getY() + player2.getY();
+            //turn (90 + offset);
+            setRotation(offset);
+            isLastTouchedByPlayer1 = false;
+        }
+        Actor player2SizeDown = getOneIntersectingObject(Player2SizeDown.class);
+        if (player2SizeDown != null) 
+        {
+            int offset = getY() + player2.getY();
+            //turn (90 + offset);
+            setRotation(offset);
+            isLastTouchedByPlayer1 = false;
+        }
+        
         if (isAtEdge())
         {
             if (Math.abs(getRotation() - 90) < 15)

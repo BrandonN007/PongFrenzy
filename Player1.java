@@ -17,7 +17,6 @@ public class Player1 extends Players
     public void act() 
     {
         move();
-        speed();
         hitspeedUp();
         hitspeedDown();
         hitsizeUp();
@@ -33,45 +32,52 @@ public class Player1 extends Players
             setLocation(getX(), getY() + 4);
         }
     }
-    
-    public void speed()
-    {
-        Actor powerUp = getOneIntersectingObject(PowerUp.class);
-        if(powerUp != null)
-        {
-            setLocation(getX() + 5, getY() + 5);
-            GreenfootImage image = getImage();
-            speed = Greenfoot.getRandomNumber(4)+1;
-            setImage(image);
-        }
-    }
+   
     
     public void hitspeedUp()
     {
-        Actor playerspeedUp = getOneIntersectingObject(PlayerSpeedUp.class);
-        if(playerspeedUp != null)
+        Actor playerSpeedUp = getOneIntersectingObject(PlayerSpeedUpEffect.class);
+        if(playerSpeedUp != null)
         {
-            setLocation(getX() + 5, getY() + 5);
-            GreenfootImage image = getImage();
-            setImage(image);
-            speed = speed + 1;
-            move(speed);
-        }        
+            World world = getWorld();
+            world.removeObject(playerSpeedUp);
+            Greenfoot.playSound("powerUpEffect.wav");
+            if (Greenfoot.isKeyDown("w")) 
+            {setLocation(getX(), getY() - 6);}
+            if (Greenfoot.isKeyDown("s"))
+            {setLocation(getX(), getY() + 6);}
+        }            
     }
     
     public void hitspeedDown()
     {
-        setLocation(getX() + 5, getY() + 5);
-        GreenfootImage image = getImage();
-        setImage(image);
-        speed = speed - 1;
-        move(speed);
+        Actor playerSpeedDown = getOneIntersectingObject(PlayerSpeedDownEffect.class);
+        if (playerSpeedDown != null)
+        {
+            World world = getWorld();
+            world.removeObject(playerSpeedDown);
+            int player2X;
+            int player2Y;
+            
+            player2X = getX();
+            player2Y = getY();
+        
+        }
     }
    
     public void hitsizeUp()
     {
-        GreenfootImage image = getImage();
-        setImage(image);
+        Actor playerSizeUp = getOneIntersectingObject(PlayerSizeUpEffect.class);
+        World world = getWorld();
+        if (playerSizeUp != null)
+        {
+        Player1SizeUp sizeUp = new Player1SizeUp();
+        world.addObject(sizeUp, getX(), getY());
+        world.removeObject(playerSizeUp);
+        world.removeObject(this);
+ 
+        Greenfoot.playSound("powerUpEffect.wav");
+        }
     }
     
     public void hitsizeDown()

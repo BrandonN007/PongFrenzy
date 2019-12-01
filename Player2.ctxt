@@ -1,18 +1,16 @@
 #BlueJ class context
 comment0.target=Player2
-comment0.text=\n\ Write\ a\ description\ of\ class\ Player2\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Player2\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=void\ act()
 comment2.params=
 comment2.target=void\ move()
 comment3.params=
-comment3.target=void\ speed()
+comment3.target=void\ hitspeedUp()
 comment4.params=
-comment4.target=void\ hitspeedUp()
+comment4.target=void\ hitspeedDown()
 comment5.params=
-comment5.target=void\ hitspeedDown()
+comment5.target=void\ hitsizeUp()
 comment6.params=
-comment6.target=void\ hitsizeUp()
-comment7.params=
-comment7.target=void\ hitsizeDown()
-numComments=8
+comment6.target=void\ hitsizeDown()
+numComments=7

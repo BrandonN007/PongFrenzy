@@ -1,25 +1,22 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.io.File;
-import java.util.*;
+
 /**
- * Write a description of class SimulationWorld here.
+ * Write a description of class SimulationEnding here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class SimulationWorld extends World
+public class SimulationEnding extends World
 {
     protected GreenfootSound music;
-    
     /**
-     * Constructor for objects of class SimulationWorld.
+     * Constructor for objects of class SimulationEnding.
      * 
      */
-    public SimulationWorld(String musicFile, int windowWidth, int windowHeight, int pixels)
+    public SimulationEnding(String musicFile, int windowWidth, int windowHeight, int pixels)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 625, 1);
-       
+        super(852, 480, 1); 
         if (musicFile != null && musicFile.isEmpty() == false)
         {
             music = new GreenfootSound(musicFile);

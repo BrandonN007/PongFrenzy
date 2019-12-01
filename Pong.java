@@ -20,7 +20,7 @@ public class Pong extends SimulationWorld
      */
     public Pong()
     {    
-        super("", 1000, 625, 1);
+        super("gameplay.wav", 1000, 625, 1);
         lastFrameTimeMS = System.currentTimeMillis();
         prepare();
     }
@@ -554,13 +554,14 @@ public class Pong extends SimulationWorld
         scorePlayer2 += 1;
     }
     
-    public void transitionToWorld()
+
+    public void transitionToEnding()
     {
         List<Ball> ballList = getObjects(Ball.class);
-        if (ballList.size() <= 0)
+        if (ballList.size() == 0 )
         {
-            transitionToWorld(new Ending());
+            Greenfoot.setWorld(new Ending(scorePlayer1, scorePlayer2));
         }
+        
     }
-    
 }

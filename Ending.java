@@ -43,7 +43,7 @@ public class Ending extends SimulationWorld
         World pong = new Pong();
         if (Greenfoot.isKeyDown("space"))
         {
-            Greenfoot.setWorld(new Pong());
+            transitionToWorld(new Pong());
         }
     }
     

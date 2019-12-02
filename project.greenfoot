@@ -20,31 +20,31 @@ class.Portal2.image=Portal2.png
 class.Portal3.image=Portal3.png
 class.ScorePlayer1.image=ScorePlayer1.png
 class.ScorePlayer2.image=ScorePlayer2.png
+class.Speed.image=PlayerSpeed.png
 class.Timer.image=Timer.png
 dependency1.from=Menu
 dependency1.to=Pong
 dependency1.type=UsesDependency
 dependency10.from=Pong
-dependency10.to=Portal3
+dependency10.to=Portal2
 dependency10.type=UsesDependency
 dependency11.from=Pong
-dependency11.to=Ending
+dependency11.to=Portal3
 dependency11.type=UsesDependency
-dependency12.from=SimulationEnding
-dependency12.to=SimulationWorld
+dependency12.from=Pong
+dependency12.to=Ending
 dependency12.type=UsesDependency
-<<<<<<< HEAD
 dependency13.from=Ball
-dependency13.to=PlayerSizeUp
+dependency13.to=PlayerSizeUpEffect
 dependency13.type=UsesDependency
 dependency14.from=Ball
-dependency14.to=PlayerSpeedUp
+dependency14.to=PlayerSpeedUpEffect
 dependency14.type=UsesDependency
 dependency15.from=Ball
-dependency15.to=PlayerSizeDown
+dependency15.to=PlayerSizeDownEffect
 dependency15.type=UsesDependency
 dependency16.from=Ball
-dependency16.to=PlayerSpeedDown
+dependency16.to=PlayerSpeedDownEffect
 dependency16.type=UsesDependency
 dependency17.from=Ball
 dependency17.to=Pong
@@ -54,162 +54,89 @@ dependency18.to=Portal
 dependency18.type=UsesDependency
 dependency19.from=Ball
 dependency19.to=BrickPowerUp
-=======
-dependency13.from=Ending
-dependency13.to=Pong
-dependency13.type=UsesDependency
-dependency14.from=Ball
-dependency14.to=PlayerSizeUpEffect
-dependency14.type=UsesDependency
-dependency15.from=Ball
-dependency15.to=PlayerSpeedUpEffect
-dependency15.type=UsesDependency
-dependency16.from=Ball
-dependency16.to=PlayerSizeDownEffect
-dependency16.type=UsesDependency
-dependency17.from=Ball
-dependency17.to=PlayerSpeedDownEffect
-dependency17.type=UsesDependency
-dependency18.from=Ball
-dependency18.to=Pong
-dependency18.type=UsesDependency
-dependency19.from=Ball
-dependency19.to=Portal
->>>>>>> ad7512124e33d17f49186f2feaa866886d97a918
 dependency19.type=UsesDependency
-dependency2.from=Pong
-dependency2.to=BrickPowerUp
+dependency2.from=Ending
+dependency2.to=Pong
 dependency2.type=UsesDependency
 dependency20.from=Ball
-<<<<<<< HEAD
 dependency20.to=Brick
 dependency20.type=UsesDependency
 dependency21.from=Ball
 dependency21.to=Player1
 dependency21.type=UsesDependency
 dependency22.from=Ball
-dependency22.to=Player2
+dependency22.to=Player1SizeUp
 dependency22.type=UsesDependency
 dependency23.from=Ball
-dependency23.to=Portal2
+dependency23.to=Player1SizeDown
 dependency23.type=UsesDependency
 dependency24.from=Ball
-dependency24.to=Portal3
-dependency24.type=UsesDependency
-dependency25.from=Timer
-dependency25.to=Pong
-dependency25.type=UsesDependency
-dependency26.from=Timer
-dependency26.to=Ending
-dependency26.type=UsesDependency
-dependency27.from=Player2
-dependency27.to=PowerUp
-dependency27.type=UsesDependency
-dependency28.from=Player2
-dependency28.to=PlayerSpeedUp
-dependency28.type=UsesDependency
-dependency29.from=Player1
-dependency29.to=PowerUp
-=======
-dependency20.to=BrickPowerUp
-dependency20.type=UsesDependency
-dependency21.from=Ball
-dependency21.to=Brick
-dependency21.type=UsesDependency
-dependency22.from=Ball
-dependency22.to=Player1
-dependency22.type=UsesDependency
-dependency23.from=Ball
-dependency23.to=Player1SizeUp
-dependency23.type=UsesDependency
-dependency24.from=Ball
-dependency24.to=Player1SizeDown
+dependency24.to=Player2
 dependency24.type=UsesDependency
 dependency25.from=Ball
-dependency25.to=Player2
+dependency25.to=Player2SizeUp
 dependency25.type=UsesDependency
 dependency26.from=Ball
-dependency26.to=Player2SizeUp
+dependency26.to=Player2SizeDown
 dependency26.type=UsesDependency
 dependency27.from=Ball
-dependency27.to=Player2SizeDown
+dependency27.to=Portal2
 dependency27.type=UsesDependency
 dependency28.from=Ball
-dependency28.to=Portal2
+dependency28.to=Portal3
 dependency28.type=UsesDependency
-dependency29.from=Ball
-dependency29.to=Portal3
->>>>>>> ad7512124e33d17f49186f2feaa866886d97a918
+dependency29.from=Player2
+dependency29.to=Player2SizeUp
 dependency29.type=UsesDependency
 dependency3.from=Pong
-dependency3.to=Timer
+dependency3.to=BrickPowerUp
 dependency3.type=UsesDependency
-<<<<<<< HEAD
-dependency30.from=Player1
-dependency30.to=PlayerSpeedUp
-dependency30.type=UsesDependency
-=======
 dependency30.from=Player2
-dependency30.to=Player2SizeUp
+dependency30.to=PlayerSpeedUpEffect
 dependency30.type=UsesDependency
 dependency31.from=Player2
-dependency31.to=PlayerSpeedUpEffect
+dependency31.to=PlayerSpeedDownEffect
 dependency31.type=UsesDependency
 dependency32.from=Player2
-dependency32.to=PlayerSpeedDownEffect
+dependency32.to=PlayerSizeUpEffect
 dependency32.type=UsesDependency
-dependency33.from=Player2
-dependency33.to=PlayerSizeUpEffect
+dependency33.from=Player1
+dependency33.to=PlayerSpeedUpEffect
 dependency33.type=UsesDependency
 dependency34.from=Player1
-dependency34.to=Player1SizeUp
+dependency34.to=PlayerSpeedDownEffect
 dependency34.type=UsesDependency
 dependency35.from=Player1
-dependency35.to=PlayerSpeedUpEffect
+dependency35.to=PlayerSizeUpEffect
 dependency35.type=UsesDependency
-dependency36.from=Player1
-dependency36.to=PlayerSpeedDownEffect
+dependency36.from=Timer
+dependency36.to=Pong
 dependency36.type=UsesDependency
-dependency37.from=Player1
-dependency37.to=PlayerSizeUpEffect
-dependency37.type=UsesDependency
-dependency38.from=Timer
-dependency38.to=Pong
-dependency38.type=UsesDependency
->>>>>>> ad7512124e33d17f49186f2feaa866886d97a918
 dependency4.from=Pong
-dependency4.to=Player1
+dependency4.to=Timer
 dependency4.type=UsesDependency
 dependency5.from=Pong
-dependency5.to=Player2
+dependency5.to=Player1
 dependency5.type=UsesDependency
 dependency6.from=Pong
-dependency6.to=Brick
+dependency6.to=Player2
 dependency6.type=UsesDependency
 dependency7.from=Pong
-dependency7.to=Ball
+dependency7.to=Brick
 dependency7.type=UsesDependency
 dependency8.from=Pong
-dependency8.to=Portal
+dependency8.to=Ball
 dependency8.type=UsesDependency
 dependency9.from=Pong
-dependency9.to=Portal2
+dependency9.to=Portal
 dependency9.type=UsesDependency
 editor.fx.0.height=722
 editor.fx.0.width=800
-<<<<<<< HEAD
-editor.fx.0.x=320
-editor.fx.0.y=56
-height=821
-package.numDependencies=30
-package.numTargets=22
-=======
-editor.fx.0.x=447
-editor.fx.0.y=7
+editor.fx.0.x=308
+editor.fx.0.y=39
 height=838
-package.numDependencies=38
-package.numTargets=29
->>>>>>> ad7512124e33d17f49186f2feaa866886d97a918
+package.numDependencies=36
+package.numTargets=28
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -232,110 +159,70 @@ target1.width=80
 target1.x=0
 target1.y=0
 target10.height=50
-<<<<<<< HEAD
-target10.name=PlayerSizeUp
-=======
 target10.name=Player1
->>>>>>> ad7512124e33d17f49186f2feaa866886d97a918
 target10.showInterface=false
 target10.type=ClassTarget
-target10.width=100
+target10.width=80
 target10.x=0
 target10.y=0
 target11.height=50
-<<<<<<< HEAD
-target11.name=PowerUp
-=======
 target11.name=Players
->>>>>>> ad7512124e33d17f49186f2feaa866886d97a918
 target11.showInterface=false
 target11.type=ClassTarget
 target11.width=80
 target11.x=0
 target11.y=0
 target12.height=50
-<<<<<<< HEAD
-target12.name=Portal
-=======
 target12.name=ScorePlayer2
->>>>>>> ad7512124e33d17f49186f2feaa866886d97a918
 target12.showInterface=false
 target12.type=ClassTarget
 target12.width=90
 target12.x=0
 target12.y=0
 target13.height=50
-<<<<<<< HEAD
-target13.name=PlayerSpeedDown
-=======
 target13.name=ScorePlayer1
->>>>>>> ad7512124e33d17f49186f2feaa866886d97a918
 target13.showInterface=false
 target13.type=ClassTarget
-target13.width=120
+target13.width=90
 target13.x=0
 target13.y=0
 target14.height=50
-<<<<<<< HEAD
-target14.name=Menu
-=======
 target14.name=Speed
->>>>>>> ad7512124e33d17f49186f2feaa866886d97a918
 target14.showInterface=false
 target14.type=ClassTarget
 target14.width=80
 target14.x=0
 target14.y=0
 target15.height=50
-<<<<<<< HEAD
-target15.name=PlayerSizeDown
-=======
 target15.name=SimulationWorld
->>>>>>> ad7512124e33d17f49186f2feaa866886d97a918
 target15.showInterface=false
 target15.type=ClassTarget
 target15.width=110
 target15.x=0
 target15.y=0
 target16.height=50
-<<<<<<< HEAD
-target16.name=Ending
-=======
 target16.name=Player1SizeDown
->>>>>>> ad7512124e33d17f49186f2feaa866886d97a918
 target16.showInterface=false
 target16.type=ClassTarget
-target16.width=80
+target16.width=110
 target16.x=0
 target16.y=0
 target17.height=50
-<<<<<<< HEAD
-target17.name=Player2
-=======
 target17.name=PlayerSpeedUpEffect
->>>>>>> ad7512124e33d17f49186f2feaa866886d97a918
 target17.showInterface=false
 target17.type=ClassTarget
 target17.width=130
 target17.x=0
 target17.y=0
 target18.height=50
-<<<<<<< HEAD
-target18.name=Player1
-=======
 target18.name=BrickPowerUp
->>>>>>> ad7512124e33d17f49186f2feaa866886d97a918
 target18.showInterface=false
 target18.type=ClassTarget
 target18.width=100
 target18.x=0
 target18.y=0
 target19.height=50
-<<<<<<< HEAD
-target19.name=Pong
-=======
 target19.name=Player2SizeDown
->>>>>>> ad7512124e33d17f49186f2feaa866886d97a918
 target19.showInterface=false
 target19.type=ClassTarget
 target19.width=110
@@ -349,90 +236,68 @@ target2.width=80
 target2.x=0
 target2.y=0
 target20.height=50
-<<<<<<< HEAD
-target20.name=Portal3
-=======
 target20.name=Score
->>>>>>> ad7512124e33d17f49186f2feaa866886d97a918
 target20.showInterface=false
 target20.type=ClassTarget
 target20.width=80
 target20.x=0
 target20.y=0
 target21.height=50
-<<<<<<< HEAD
-target21.name=Players
-=======
 target21.name=Timer
->>>>>>> ad7512124e33d17f49186f2feaa866886d97a918
 target21.showInterface=false
 target21.type=ClassTarget
 target21.width=80
 target21.x=0
 target21.y=0
 target22.height=50
-<<<<<<< HEAD
-target22.name=Portal2
-=======
 target22.name=Brick
->>>>>>> ad7512124e33d17f49186f2feaa866886d97a918
 target22.showInterface=false
 target22.type=ClassTarget
 target22.width=80
 target22.x=0
 target22.y=0
-<<<<<<< HEAD
-=======
 target23.height=50
-target23.name=SimulationEnding
+target23.name=PlayerSizeDownEffect
 target23.showInterface=false
 target23.type=ClassTarget
-target23.width=120
+target23.width=140
 target23.x=0
 target23.y=0
 target24.height=50
-target24.name=PlayerSizeDownEffect
+target24.name=PowerUp
 target24.showInterface=false
 target24.type=ClassTarget
-target24.width=140
+target24.width=80
 target24.x=0
 target24.y=0
 target25.height=50
-target25.name=PowerUp
+target25.name=Ending
 target25.showInterface=false
 target25.type=ClassTarget
 target25.width=80
 target25.x=0
 target25.y=0
 target26.height=50
-target26.name=Ending
+target26.name=Pong
 target26.showInterface=false
 target26.type=ClassTarget
 target26.width=80
 target26.x=0
 target26.y=0
 target27.height=50
-target27.name=Pong
+target27.name=Portal3
 target27.showInterface=false
 target27.type=ClassTarget
 target27.width=80
 target27.x=0
 target27.y=0
 target28.height=50
-target28.name=Portal3
+target28.name=Portal2
 target28.showInterface=false
 target28.type=ClassTarget
 target28.width=80
 target28.x=0
 target28.y=0
-target29.height=50
-target29.name=Portal2
-target29.showInterface=false
-target29.type=ClassTarget
-target29.width=80
-target29.x=0
-target29.y=0
->>>>>>> ad7512124e33d17f49186f2feaa866886d97a918
 target3.height=50
 target3.name=PlayerSizeUpEffect
 target3.showInterface=false
@@ -441,16 +306,6 @@ target3.width=120
 target3.x=0
 target3.y=0
 target4.height=50
-<<<<<<< HEAD
-target4.name=SimulationWorld
-target4.showInterface=false
-target4.type=ClassTarget
-target4.width=110
-target4.x=0
-target4.y=0
-target5.height=50
-target5.name=PlayerSpeedUp
-=======
 target4.name=Player2SizeUp
 target4.showInterface=false
 target4.type=ClassTarget
@@ -459,34 +314,19 @@ target4.x=0
 target4.y=0
 target5.height=50
 target5.name=PlayerSpeedDownEffect
->>>>>>> ad7512124e33d17f49186f2feaa866886d97a918
 target5.showInterface=false
 target5.type=ClassTarget
 target5.width=150
 target5.x=0
 target5.y=0
 target6.height=50
-<<<<<<< HEAD
-target6.name=BrickPowerUp
-=======
 target6.name=Player1SizeUp
->>>>>>> ad7512124e33d17f49186f2feaa866886d97a918
 target6.showInterface=false
 target6.type=ClassTarget
 target6.width=100
 target6.x=0
 target6.y=0
 target7.height=50
-<<<<<<< HEAD
-target7.name=Score
-target7.showInterface=false
-target7.type=ClassTarget
-target7.width=80
-target7.x=0
-target7.y=0
-target8.height=50
-target8.name=Timer
-=======
 target7.name=Portal
 target7.showInterface=false
 target7.type=ClassTarget
@@ -495,18 +335,13 @@ target7.x=0
 target7.y=0
 target8.height=50
 target8.name=Menu
->>>>>>> ad7512124e33d17f49186f2feaa866886d97a918
 target8.showInterface=false
 target8.type=ClassTarget
 target8.width=80
 target8.x=0
 target8.y=0
 target9.height=50
-<<<<<<< HEAD
-target9.name=Brick
-=======
 target9.name=Player2
->>>>>>> ad7512124e33d17f49186f2feaa866886d97a918
 target9.showInterface=false
 target9.type=ClassTarget
 target9.width=80
@@ -514,6 +349,6 @@ target9.x=0
 target9.y=0
 version=3.0.0
 width=1550
-world.lastInstantiated=Pong
+world.lastInstantiated=Menu
 xPosition=0
 yPosition=0

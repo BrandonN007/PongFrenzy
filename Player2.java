@@ -14,11 +14,11 @@ public class Player2 extends Players
      */
     private int speed;
     private int size;
-    private boolean isSpeedDownTouchedByPlayer1;
-    private boolean isSpeedDown2TouchedByPlayer2;
-    private boolean isSizeDownTouchedByPlayer1;
-    private boolean isSizeDown2TouchedByPlayer2;
-    private boolean isMoveChanged;
+    protected boolean isSpeedDownTouchedByPlayer1;
+    protected boolean isSpeedDown2TouchedByPlayer2;
+    protected boolean isSizeDownTouchedByPlayer1;
+    protected boolean isSizeDown2TouchedByPlayer2;
+    protected boolean isMoveChanged;
     
     public void act() 
     {
@@ -32,26 +32,24 @@ public class Player2 extends Players
     
     public void move()
     {
-        if (isMoveChanged == true)
-        {
-            if (Greenfoot.isKeyDown("up")) 
-            {setLocation(getX(), getY() - 5);}
-            if (Greenfoot.isKeyDown("down"))
-            {setLocation(getX(), getY() + 5);}
-        }
-        
-        if (isSpeedDownTouchedByPlayer1 == true)
+        if (isSpeedDown2TouchedByPlayer2 == true)
         {
             if (Greenfoot.isKeyDown("up")) 
             {setLocation(getX(), getY() - 3);}
             if (Greenfoot.isKeyDown("down"))
             {setLocation(getX(), getY() + 3);}
         }
-        
-        if (Greenfoot.isKeyDown("up")) {
+        else if (isMoveChanged == true)
+        {
+            if (Greenfoot.isKeyDown("up")) 
+            {setLocation(getX(), getY() - 5);}
+            if (Greenfoot.isKeyDown("down"))
+            {setLocation(getX(), getY() + 5);}
+        }
+        else if (Greenfoot.isKeyDown("up")) {
             setLocation(getX(), getY() - 4);
         }
-        if (Greenfoot.isKeyDown("down")) {
+        else if (Greenfoot.isKeyDown("down")) {
             setLocation(getX(), getY() + 4);
         }
     }
@@ -72,9 +70,13 @@ public class Player2 extends Players
     {
         Actor playerspeedDown = getOneIntersectingObject(PlayerSpeedDownEffect.class);
         World world = getWorld();
+        
+        Player1 p1 = getWorld().getObjects(Player1.class).get(0);
         if(playerspeedDown != null)
         {
             isSpeedDown2TouchedByPlayer2 = true;
+            p1.isSpeedDownTouchedByPlayer1 = true;
+            
             world.removeObject(playerspeedDown);
         } 
     }
@@ -108,13 +110,16 @@ public class Player2 extends Players
     {
         Actor playersizeDown = getOneIntersectingObject(PlayerSizeDownEffect.class);
         World world = getWorld();
+        
+        Player1 p1 = getWorld().getObjects(Player1.class).get(0);
         if(playersizeDown != null)
         {
             //GreenfootImage image = getImage();
             //image.scale(image.getWidth(),image.getHeight() -5);
             //setImage(image);
             
-            isSizeDown2TouchedByPlayer2 = true; 
+            isSizeDownTouchedByPlayer1 = true;
+            p1.isSizeDownTouchedByPlayer1 = true;
             world.removeObject(playersizeDown);
         }
         
@@ -125,11 +130,13 @@ public class Player2 extends Players
         World world = getWorld();
         if (isSizeDownTouchedByPlayer1 == true)
         {
-            GreenfootImage image = getImage();
-            image.scale(image.getWidth(),image.getHeight() - 25);
-            setImage(image);
+            //GreenfootImage image = getImage();
+            //image.scale(image.getWidth(),image.getHeight() - 25);
+            
+            //setImage(image);
+            
+
             Greenfoot.playSound("powerUpEffect.wav");
-            world.removeObject(this);
             
         }
     }

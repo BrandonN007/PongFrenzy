@@ -19,22 +19,23 @@ public class Ending extends SimulationWorld
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super("ending.wav", 1000, 625, 1); 
         
+        showText("Press Space to Play Again!", 500, 375);
         if (scorePlayer1 < scorePlayer2)
         {
-            showText("Player 2 Wins!", 440, 240);
-            showText(scorePlayer1 + " - " + scorePlayer2, 440, 265);
+            showText("Player 2 Wins!", 500, 290);
+            showText(scorePlayer1 + " - " + scorePlayer2, 500, 315);
         }
         else 
         if (scorePlayer1 > scorePlayer2)
         {
-            showText("Player 1 Wins!", 440, 240);
-            showText(scorePlayer1 + " - " + scorePlayer2, 440, 265);
+            showText("Player 1 Wins!", 500, 290);
+            showText(scorePlayer1 + " - " + scorePlayer2, 500, 315);
         }
         else 
         if (scorePlayer1 == scorePlayer2)
         {
-            showText("It's a tie!", 440, 240);
-            showText(scorePlayer1 + " - " + scorePlayer2, 440, 265);
+            showText("It's a tie!", 500, 290);
+            showText(scorePlayer1 + " - " + scorePlayer2, 500, 315);
         }
     }
     

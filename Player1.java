@@ -119,8 +119,8 @@ public class Player1 extends Players
             /*GreenfootImage image = getImage();
             image.scale(image.getWidth(),image.getHeight() -5);
             setImage(image);*/
-            isSizeDown2TouchedByPlayer2 = true;
-            p2.isSizeDown2TouchedByPlayer2 = true;
+            isSizeDownTouchedByPlayer1 = true;
+            p2.isSizeDownTouchedByPlayer1 = true;
             
             world.removeObject(playersizeDown);
             
@@ -132,12 +132,13 @@ public class Player1 extends Players
         World world = getWorld();
         
         
-        if (isSpeedDown2TouchedByPlayer2 == true)
+        if (isSizeDown2TouchedByPlayer2 == true)
         {
-            //GreenfootImage image = getImage();
-            //image.scale(image.getWidth(),image.getHeight() - 25);
-            //setImage(image);
-            Greenfoot.playSound("powerUpEffect.wav");
+            GreenfootImage image = getImage();
+            image.scale(image.getWidth(),image.getHeight() - 25);
+            setImage(image);
+            //Greenfoot.playSound("powerUpEffect.wav");
+            isSizeDown2TouchedByPlayer2 = false;
         }
     }
 }

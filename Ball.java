@@ -45,9 +45,10 @@ public class Ball extends Actor
         Actor brickPowerUp = getOneIntersectingObject(BrickPowerUp.class);
         if (brickPowerUp != null)
         {
+            turn(120 + Greenfoot.getRandomNumber(120));
             World world = getWorld();
             world.removeObject(brickPowerUp);
-            Greenfoot.playSound("bump.wav");
+            Greenfoot.playSound("breakingPowerUpWall.wav");
             
             // Drop power up 1/4 of the time
             if (Greenfoot.getRandomNumber(4) == 0)
@@ -102,7 +103,7 @@ public class Ball extends Actor
         World world = getWorld();
         if (brick != null) {
             world.removeObject(brick);
-            Greenfoot.playSound("bump.wav");
+            Greenfoot.playSound("breakingWall.mp3");
             turn(120 + Greenfoot.getRandomNumber(120));
         }
        
@@ -146,6 +147,7 @@ public class Ball extends Actor
             //turn (90 + offset);
             setRotation(offset);
             isLastTouchedByPlayer1 = false;
+            GreenfootSound sound = new GreenfootSound("bounce.mp3");
         }
         Actor player2SizeUp = getOneIntersectingObject(Player2SizeUp.class);
         if (player2SizeUp != null) 
@@ -213,6 +215,7 @@ public class Ball extends Actor
          {
             world.removeObject(this);
             world.increaseScorePlayer1();
+            Greenfoot.playSound("scorePlusOne.wav");
          }
     }
     
@@ -223,6 +226,7 @@ public class Ball extends Actor
          {
             world.removeObject(this);
             world.increaseScorePlayer2();
+            Greenfoot.playSound("scorePlusOne.wav");
          }
     }
     
@@ -239,6 +243,7 @@ public class Ball extends Actor
             Ball newBall = new Ball(isLastTouchedByPlayer1);
             newBall.setImage(getImage());
             newBall.setSpeed(speed);
+            Greenfoot.playSound("ballSplit.wav");
             world.addObject(newBall, getX(), getY());
             turn(Greenfoot.getRandomNumber(50) - 45);
             portal.disable();

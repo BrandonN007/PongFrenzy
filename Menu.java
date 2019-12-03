@@ -15,7 +15,7 @@ public class Menu extends SimulationWorld
      */
     public Menu()
     {    
-        super("pongMenu.wav", 1000, 625, 1);    
+        super("PongMenuV2.wav", 1000, 625, 1);    
     }
     
     public void isKeyDown()

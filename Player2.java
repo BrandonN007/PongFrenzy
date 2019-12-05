@@ -96,7 +96,7 @@ public class Player2 extends Players
         {
             Greenfoot.playSound("powerUpEffect.wav");
             GreenfootImage image = getImage();
-            image.scale(image.getWidth(),Math.max(image.getHeight() - 50, 225));
+            image.scale(image.getWidth(),Math.max(image.getHeight() - 25, 225));
             setImage(image);
             world.removeObject(playersizeUp);
         /*Actor playerSizeUp = getOneIntersectingObject(PlayerSizeUpEffect.class);

@@ -12,7 +12,7 @@ public class Player2 extends Players
      * Act - do whatever the Player2 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private int speed;
+    private int speed = 4;
     private int size;
     protected boolean isSpeedDownTouchedByPlayer1;
     protected boolean isSpeedDown2TouchedByPlayer2;
@@ -32,25 +32,29 @@ public class Player2 extends Players
     
     public void move()
     {
-        if (isSpeedDown2TouchedByPlayer2 == true)
+        if (isSpeedDownTouchedByPlayer1 == true)
         {
+            speed -= 1;
+            isSpeedDownTouchedByPlayer1 = false;
             if (Greenfoot.isKeyDown("up")) 
-            {setLocation(getX(), getY() - 3);}
+            {setLocation(getX(), getY() - speed);}
             if (Greenfoot.isKeyDown("down"))
-            {setLocation(getX(), getY() + 3);}
+            {setLocation(getX(), getY() + speed);}
         }
         else if (isMoveChanged == true)
         {
+            speed += 3;
+            isMoveChanged = false;
             if (Greenfoot.isKeyDown("up")) 
-            {setLocation(getX(), getY() - 5);}
+            {setLocation(getX(), getY() - speed);}
             if (Greenfoot.isKeyDown("down"))
-            {setLocation(getX(), getY() + 5);}
+            {setLocation(getX(), getY() + speed);}
         }
         else if (Greenfoot.isKeyDown("up")) {
-            setLocation(getX(), getY() - 4);
+            setLocation(getX(), getY() - speed);
         }
         else if (Greenfoot.isKeyDown("down")) {
-            setLocation(getX(), getY() + 4);
+            setLocation(getX(), getY() + speed);
         }
     }
     
@@ -72,10 +76,12 @@ public class Player2 extends Players
         World world = getWorld();
         
         Player1 p1 = getWorld().getObjects(Player1.class).get(0);
-        if(playerspeedDown != null)
+        if (playerspeedDown != null)
         {
             isSpeedDown2TouchedByPlayer2 = true;
-            p1.isSpeedDownTouchedByPlayer1 = true;
+            
+            p1.isSpeedDown2TouchedByPlayer2 = true;
+            p1.isMoveChanged = false;
             
             world.removeObject(playerspeedDown);
         } 
@@ -90,7 +96,7 @@ public class Player2 extends Players
         {
             Greenfoot.playSound("powerUpEffect.wav");
             GreenfootImage image = getImage();
-            image.scale(image.getWidth(),image.getHeight() + 75);
+            image.scale(image.getWidth(),Math.max(image.getHeight() - 50, 225));
             setImage(image);
             world.removeObject(playersizeUp);
         /*Actor playerSizeUp = getOneIntersectingObject(PlayerSizeUpEffect.class);
@@ -131,7 +137,7 @@ public class Player2 extends Players
         if (isSizeDownTouchedByPlayer1 == true)
         {
             GreenfootImage image = getImage();
-            image.scale(image.getWidth(),image.getHeight() - 25);
+            image.scale(image.getWidth(),Math.max(image.getHeight() - 25, 25));
             
             setImage(image);
             

@@ -143,9 +143,10 @@ public class Ball extends Actor
         Actor player2 = getOneIntersectingObject(Player2.class);
         if (player2 != null) 
         {
-            int offset = getY() + player2.getY();
+            int offset = getY() - player2.getY();
             //turn (90 + offset);
-            setRotation(offset);
+            setRotation(180 - offset);
+
             isLastTouchedByPlayer1 = false;
             GreenfootSound sound = new GreenfootSound("bounce.mp3");
         }

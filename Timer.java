@@ -48,7 +48,13 @@ public class Timer extends Actor
         
         setImage(new GreenfootImage("Time: " + timeStr, 20, Color.WHITE, new Color(0,0,0,0)));
 
-       
+        Pong pong = (Pong) getWorld();
+        SimulationWorld simulation = (SimulationWorld) getWorld();
+        
+        if (time < 0)
+        {
+            simulation.transitionToWorld(new Ending(pong.getScorePlayer1(), pong.getScorePlayer2()));
+        }
         
     }    
 }

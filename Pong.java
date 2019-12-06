@@ -538,6 +538,8 @@ public class Pong extends SimulationWorld
         showText("" + scorePlayer1, 175, 33);
         showText("" + scorePlayer2, 845, 33);
         transitionToGameOver();
+        getScorePlayer1();
+        getScorePlayer2();
     }
     
     public double getTimeStepDuration()
@@ -550,9 +552,19 @@ public class Pong extends SimulationWorld
         scorePlayer1 += 1;
     }
     
+    public int getScorePlayer1()
+    {
+        return scorePlayer1;
+    }
+    
     public void increaseScorePlayer2()
     {
         scorePlayer2 += 1;
+    }
+    
+    public int getScorePlayer2()
+    {
+        return scorePlayer2;
     }
     
 

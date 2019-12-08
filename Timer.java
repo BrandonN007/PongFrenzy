@@ -12,7 +12,7 @@ public class Timer extends Actor
     
     public Timer()
     {
-        time = 300.0;
+        time = 180.0;
     }
     
     public void act() 

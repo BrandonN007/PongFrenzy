@@ -1,0 +1,3 @@
+updates since presentation:
+  -font of scores
+  -timer resumes when the game is unpaused

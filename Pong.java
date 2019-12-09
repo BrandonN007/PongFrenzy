@@ -528,6 +528,12 @@ public class Pong extends SimulationWorld
         addObject(portal33,616,397);
         Portal3 portal34 = new Portal3();
         addObject(portal34,414,241);
+        portal5.setLocation(644,503);
+        portal7.setLocation(382,506);
+        portal34.setLocation(417,245);
+        portal6.setLocation(381,132);
+        portal2.setLocation(511,34);
+        portal.setLocation(516,300);
     }
 
     public void act()
@@ -535,8 +541,19 @@ public class Pong extends SimulationWorld
         timeStepDuration = (System.currentTimeMillis() - lastFrameTimeMS) / 1000.0;
         lastFrameTimeMS = System.currentTimeMillis();
         
-        showText("" + scorePlayer1, 175, 33);
-        showText("" + scorePlayer2, 845, 33);
+        // showText("" + scorePlayer1, 175, 33);
+        // showText("" + scorePlayer2, 845, 33);
+        
+        GreenfootImage bg = getBackground();
+        bg.clear();
+        bg.setColor(Color.BLACK);
+        bg.fill();
+        bg.setFont(new Font(50));
+        bg.setColor(new Color(255,255,255,255));
+        bg.drawString("" + scorePlayer1, 175, 50);
+        bg.drawString("" + scorePlayer2, 845, 50);
+        
+        
         transitionToGameOver();
         getScorePlayer1();
         getScorePlayer2();
@@ -567,7 +584,12 @@ public class Pong extends SimulationWorld
         return scorePlayer2;
     }
     
-
+    public void started()
+    {
+        super.started();
+        lastFrameTimeMS = System.currentTimeMillis();
+    }
+    
     public void transitionToGameOver()
     {
         List<Ball> ballList = getObjects(Ball.class);

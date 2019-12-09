@@ -12,7 +12,7 @@ public class Timer extends Actor
     
     public Timer()
     {
-        time = 180.0;
+        time = 120.0;
     }
     
     public void act() 
@@ -51,7 +51,7 @@ public class Timer extends Actor
         Pong pong = (Pong) getWorld();
         SimulationWorld simulation = (SimulationWorld) getWorld();
         
-        if (time < 0)
+        if (time <= 0)
         {
             simulation.transitionToWorld(new Ending(pong.getScorePlayer1(), pong.getScorePlayer2()));
         }
